@@ -1,6 +1,4 @@
 import random
-from tkinter import *
-from tkinter import messagebox
 def play(bag1,bag2,bag3):
     user=input("Enter bag number: ")
     while 1:
