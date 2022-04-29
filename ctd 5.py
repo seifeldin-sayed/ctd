@@ -1,4 +1,5 @@
 import random
+import cv2
 def play(bag1,bag2,bag3):
     user=input("Enter bag number: ")
     while 1:
@@ -88,12 +89,22 @@ def game(bag1,bag2,bag3,c):
         display(bag1,bag2,bag3)
         c=check_win(bag1,bag2,bag3,c)
         if c==1:
+            window_name= 'image'
+            image=cv2.imread("win.jpg")
+            cv2.imshow(window_name, image)
+            cv2.waitKey(0)
+            cv2.destroyAllWindows()
             print("You won")
             exit()
         bag1, bag2, bag3=computer(bag1,bag2,bag3)
         display(bag1,bag2,bag3)
         c=check_win(bag1,bag2,bag3,c)
         if c==1:
+            window_name= 'image'
+            image=cv2.imread("lose.jpg")
+            cv2.imshow(window_name, image)
+            cv2.waitKey(0)
+            cv2.destroyAllWindows()
             print("You lose")
             exit()
 bag1=bag2=bag3=10
